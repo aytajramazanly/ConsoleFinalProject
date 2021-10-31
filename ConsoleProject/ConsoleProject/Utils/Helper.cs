@@ -100,8 +100,8 @@ namespace ConsoleProject.Utils
         {
            
             Receipt receipt = new Receipt(user, drug.Name, drug.Price * count, count,drug.Price);
-            Helper.DactyloWriting(ConsoleColor.Yellow, "Purchase is successfull!");
-            Helper.DactyloWriting(ConsoleColor.Green, $"Your Receipt: {receipt}");
+            Helper.DactyloWriting(ConsoleColor.Green, "Purchase is successfull!");
+            Helper.DactyloWriting(ConsoleColor.DarkMagenta, $"Your Receipt: {receipt}");
             user.AddCheck(receipt);
         }
         public static string InitialUpper(ref string text)
