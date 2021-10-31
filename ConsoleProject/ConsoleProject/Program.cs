@@ -185,6 +185,7 @@ namespace ConsoleProject
                                                         Helper.DactyloWriting(ConsoleColor.Red, "Drug with this name doesn't exist!");
                                                         goto PharmacyMenu;
                                                     }
+                                                    Update:
                                                     Helper.Print(ConsoleColor.Cyan, "1-Update Count | 2-Update Price");
                                                     string answer = Console.ReadLine();
                                                     if (answer == "1")
@@ -208,6 +209,12 @@ namespace ConsoleProject
                                                             goto UpdateCount;
                                                         }
                                                         existPharmacy.UpdateDrugCount(name, new Drug(price));
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Helper.Print(ConsoleColor.Red, "Input from given numbers");
+                                                        goto Update;
                                                     }
                                                     Helper.DactyloWriting(ConsoleColor.Green, "Drug info updated successfully");
                                                     goto PharmacyMenu;
