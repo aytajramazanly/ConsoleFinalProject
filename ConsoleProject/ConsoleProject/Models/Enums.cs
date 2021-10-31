@@ -41,13 +41,11 @@ namespace ConsoleProject.Models
             InfoDrug,
             [Description("Show Drug Items")]
             ShowDrugItems,
-            [Description("Sale Drug")]
-            SaleDrug,
             [Description("Update Drug count")]
             UpdateDrug,
             [Description("Show Total Income")]
             TotalInCome,
-            [Description("Go Start Menu")]
+            [Description("Go Main Menu")]
             GoStartMenu
         }
         public enum BuyDrugException

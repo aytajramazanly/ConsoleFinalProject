@@ -99,7 +99,7 @@ namespace ConsoleProject.Utils
         public static void SuccessfullPurchase(User user, Drug drug,Pharmacy pharmacy, int count)
         {
            
-            Receipt receipt = new Receipt(user, drug.Name, drug.Price * count, count);
+            Receipt receipt = new Receipt(user, drug.Name, drug.Price * count, count,drug.Price);
             Helper.DactyloWriting(ConsoleColor.Yellow, "Purchase is successfull!");
             Helper.DactyloWriting(ConsoleColor.Green, $"Your Receipt: {receipt}");
             user.AddCheck(receipt);

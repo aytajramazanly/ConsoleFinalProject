@@ -14,20 +14,21 @@ namespace ConsoleProject.Models
         public int DrugCount { get; }
         public double TotalPrice { get; }
         public Guid Guid { get; }
+        public double UnitPrice { get; }
 
-        public Receipt(User user, string drugName, double totalPrice, int drugCount)
+        public Receipt(User user, string drugName, double totalPrice, int drugCount, double unitPrice)
         {
             User = user;
             ReceipDate = DateTime.Now;
             DrugName = drugName;
             DrugCount = drugCount;
+            UnitPrice = unitPrice;
             TotalPrice = totalPrice;
             Guid = Guid.NewGuid();
         }
-
         public override string ToString()
         {
-            return $"{DrugName} | QYT: {DrugCount} | Total Price: {TotalPrice} | Receipt Date: {ReceipDate} | ID=> {Guid}";
+            return $"{User.Name} {User.SurName} | {DrugName} | QYT: {DrugCount} | Unit Price: {UnitPrice} |Total Price: {TotalPrice} | Receipt Date: {ReceipDate} | ID=> {Guid}";
         }
     }
 }
