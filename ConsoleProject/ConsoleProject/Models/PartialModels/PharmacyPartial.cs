@@ -19,6 +19,10 @@ namespace ConsoleProject.Models
         {
             drugs.Add(drug);
         }
+        public void AddDrugType(DrugType type)
+        {
+            drugTypes.Add(type);
+        }
         public IEnumerable<Drug> InfoDrug(string name)
         {
             var searchResult = drugs.FindAll(drug => drug.Name.ToLower().Contains(name.Trim().ToLower()));
@@ -41,6 +45,18 @@ namespace ConsoleProject.Models
             foreach (Drug drug in drugs)
             {
                 yield return drug;
+            }
+        }
+        public IEnumerable<DrugType> ShowDrugTypes()
+        {
+            if (drugTypes.Count == 0)
+            {
+                yield break;
+            }
+
+            foreach (DrugType drugType in drugTypes)
+            {
+                yield return drugType;
             }
         }
         public bool IsDrugExist(string name)
@@ -69,6 +85,18 @@ namespace ConsoleProject.Models
         public int DrugsCount()
         {
             return drugs.Count;
+        }
+        public int DrugTypesCount()
+        {
+            return drugTypes.Count;
+        }
+        public bool IsDrugTypeExist(string typeName)
+        {
+            return drugTypes.Any<DrugType>(x => x.TypeName.ToLower() == typeName.Trim().ToLower());
+        }
+        public DrugType GetDrugType(Predicate<DrugType> predicate)
+        {
+            return drugTypes.Find(predicate);
         }
     }
 }

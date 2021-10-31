@@ -45,6 +45,8 @@ namespace ConsoleProject.Models
             UpdateDrug,
             [Description("Show Total Income")]
             TotalInCome,
+            [Description("Show Exist Drug Types")]
+            ShowDrugTypes,
             [Description("Go Main Menu")]
             GoStartMenu
         }

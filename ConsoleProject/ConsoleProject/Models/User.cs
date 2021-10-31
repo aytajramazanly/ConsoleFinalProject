@@ -13,7 +13,6 @@ namespace ConsoleProject.Models
         public string SurName { get; }
         public int Age { get; }
         private string _userName;
-
         public string UserName
         {
             get
@@ -56,11 +55,8 @@ namespace ConsoleProject.Models
         }
         private double Balance { get; set; }
         public int Id { get; }
-
         private static int _counter = 0;
         private List<Receipt> checks;
-
-
         public User(string name,string surname,int age)
         {
             Name = name;

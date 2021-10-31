@@ -12,7 +12,6 @@ namespace ConsoleProject
         static void Main(string[] args)
         {
             List<Pharmacy> pharmacies = new List<Pharmacy>();
-            List<DrugType> drugTypes = new List<DrugType>();
             List<User> users = new List<User>();
 
             while (true)
@@ -73,15 +72,34 @@ namespace ConsoleProject
                                             {
                                                 case PharmacyMenu.AddDrug:
                                                     Console.Clear();
-                                                    Helper.Print(ConsoleColor.Yellow, "Input drug Type: ");
-                                                    string drugTypeName = Console.ReadLine();
-                                                    if (!drugTypes.Exists(x => x.TypeName.ToLower() == drugTypeName.Trim().ToLower()))
+
+                                                    string drugTypeName;
+                                                    if (Helper.PressKey("Input new drug Type press space | choose exist drug Type press any")==ConsoleKey.Spacebar)
                                                     {
+                                                        Helper.Print(ConsoleColor.Yellow, "Input drug Type: ");
+                                                        drugTypeName = Console.ReadLine();
                                                         DrugType type = new DrugType(drugTypeName);
-                                                        drugTypes.Add(type);
+                                                        existPharmacy.AddDrugType(type);
                                                         goto inputDrugName;
                                                     }
-
+                                                    else
+                                                    {
+                                                        Console.Clear();
+                                                        Helper.Print(ConsoleColor.Yellow, "Choose Drug Type Name");
+                                                        if (existPharmacy.DrugTypesCount() != 0)
+                                                        {
+                                                            foreach (var item in existPharmacy.ShowDrugTypes())
+                                                            {
+                                                                Console.WriteLine(item);
+                                                            }
+                                                            drugTypeName = Console.ReadLine();
+                                                        }
+                                                        else
+                                                        {
+                                                            Helper.DactyloWriting(ConsoleColor.Red, "There is no exist Drug type");
+                                                            goto case PharmacyMenu.AddDrug;
+                                                        }
+                                                    }
                                                 inputDrugName:
                                                     Helper.Print(ConsoleColor.Yellow, "Input drug name: ");
                                                     string name = Console.ReadLine();
@@ -114,7 +132,7 @@ namespace ConsoleProject
                                                         Helper.Print(ConsoleColor.Red, "Input Count as a Digit: ");
                                                         goto inputCount1;
                                                     }
-                                                    Drug drug = new Drug(drugTypes.Find(x => x.TypeName.ToLower() == drugTypeName.Trim().ToLower()), name, price, count);
+                                                    Drug drug = new Drug(existPharmacy.GetDrugType(x => x.TypeName.ToLower() == drugTypeName.Trim().ToLower()), name, price, count);
                                                     existPharmacy.AddDrugs(drug);
                                                     Helper.DactyloWriting(ConsoleColor.Green, "Drug add Successfull!");
                                                     goto PharmacyMenu;
@@ -226,6 +244,25 @@ namespace ConsoleProject
                                                     }
                                                     System.Threading.Thread.Sleep(6000);
                                                     goto PharmacyMenu;
+                                                case PharmacyMenu.ShowDrugTypes:
+                                                    Console.Clear();
+                                                    if (existPharmacy.DrugTypesCount() == 0)
+                                                    {
+                                                        Helper.Print(ConsoleColor.Red, "Here is empty!");
+                                                        System.Threading.Thread.Sleep(2000);
+                                                        goto PharmacyMenu;
+                                                    }
+                                                    foreach (var item in existPharmacy.ShowDrugTypes())
+                                                    {
+                                                        Console.WriteLine(item);
+                                                    }
+                                                    if (Helper.PressKey("press space for menu") == ConsoleKey.Spacebar)
+                                                    {
+                                                        goto PharmacyMenu;
+                                                    }
+                                                    System.Threading.Thread.Sleep(6000);
+                                                    goto PharmacyMenu;
+                                                    
                                                 case PharmacyMenu.GoStartMenu:
                                                     Console.Clear();
                                                     break;
@@ -368,7 +405,8 @@ namespace ConsoleProject
                                     }
                                     var existPharmacy = Helper.SelectPharmacy(pharmacies);
                                     Helper.Print(ConsoleColor.Yellow, "Input Drug name for Buy");
-                                    Drug drugToBuy = existPharmacy.FindDrug(x => x.Name.ToLower() == Console.ReadLine().Trim().ToLower());
+                                    string drugName = Console.ReadLine();
+                                    Drug drugToBuy = existPharmacy.FindDrug(x => x.Name.ToLower() == drugName.Trim().ToLower());
                                     if (drugToBuy==null)
                                     {
                                         Helper.Print(ConsoleColor.Red, "There is no any drug with this name!");

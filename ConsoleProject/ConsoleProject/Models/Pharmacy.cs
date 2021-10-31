@@ -14,6 +14,7 @@ namespace ConsoleProject.Models
         private static int _counter = 0;
 
         private List<Drug> drugs;
+        private List<DrugType> drugTypes;
         public  double TotalInCome { get; set; }
         public Pharmacy(string name)
         {
@@ -21,6 +22,7 @@ namespace ConsoleProject.Models
             _counter++;
             Id = _counter;
             drugs = new List<Drug>();
+            drugTypes = new List<DrugType>();
         }
     }
 }
