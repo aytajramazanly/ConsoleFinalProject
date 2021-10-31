@@ -433,6 +433,11 @@ namespace ConsoleProject
                                         Helper.Print(ConsoleColor.Red, "There is no any drug with this name!");
                                         goto UserMenu;
                                     }
+                                    if (drugToBuy.Count == 0)
+                                    {
+                                        Helper.DactyloWriting(ConsoleColor.Red, "This drug is over in our branch");
+                                        goto UserMenu;
+                                    }
                                     Helper.Print(ConsoleColor.Yellow, "Input Drug count");
                                     if (!int.TryParse(Console.ReadLine(),out int count))
                                     {
