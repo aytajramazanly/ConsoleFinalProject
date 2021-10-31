@@ -1,0 +1,16 @@
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\bin\Debug\net5.0\ConsoleProject.exe
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\bin\Debug\net5.0\ConsoleProject.deps.json
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\bin\Debug\net5.0\ConsoleProject.runtimeconfig.json
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\bin\Debug\net5.0\ConsoleProject.runtimeconfig.dev.json
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\bin\Debug\net5.0\ConsoleProject.dll
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\bin\Debug\net5.0\ref\ConsoleProject.dll
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\bin\Debug\net5.0\ConsoleProject.pdb
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ConsoleProject.csproj.AssemblyReference.cache
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ConsoleProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ConsoleProject.AssemblyInfoInputs.cache
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ConsoleProject.AssemblyInfo.cs
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ConsoleProject.csproj.CoreCompileInputs.cache
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ConsoleProject.dll
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ref\ConsoleProject.dll
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ConsoleProject.pdb
+C:\Users\aytac\Desktop\Console Project\ConsoleProject\ConsoleProject\obj\Debug\net5.0\ConsoleProject.genruntimeconfig.cache
